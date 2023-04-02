@@ -1,0 +1,17 @@
+[package]
+name = "scipy_optimize_with_rust"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+# Taken from https://crates.io/crates/pyo3 and https://crates.io/crates/numpy
+[lib]
+name = "rustlib"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.18.2", features = ["extension-module"] }
+ndarray = { version = "0.15.6", features = ["rayon"] }
+numpy = "0.18.0"
+rayon = "1.5.0"
